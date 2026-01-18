@@ -29,19 +29,26 @@ public class DupeChestBlock extends BlockWithEntity {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        // FIX 1: Use 'world.isClient()' (Method) instead of field
         if (!world.isClient()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
+
             if (blockEntity instanceof DupeChestBlockEntity chest) {
-                // THE MIRROR LOGIC
+                // --- THE DUPE LOGIC ---
+                // 1. Wipe the chest clean so it doesn't get messy
+                chest.clear();
+
+                // 2. Loop through the player's main inventory (Slots 9 to 35)
+                // and copy them into the chest (Slots 0 to 26)
                 for (int i = 0; i < 27; i++) {
-                    // FIX 2: Use 'getStack()' instead of accessing '.main' directly
-                    // We offset by 9 to skip the Hotbar (0-8)
+                    // Get item from player (starting at slot 9)
                     ItemStack playerStack = player.getInventory().getStack(i + 9);
 
+                    // Put a COPY into the chest
                     chest.setStack(i, playerStack.copy());
                 }
-                player.openHandledScreen(chest);
+
+                // 3. Open the GUI so the player sees the "Duped" items
+                player.openHandledScreen((DupeChestBlockEntity)chest);
             }
         }
         return ActionResult.SUCCESS;

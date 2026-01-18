@@ -1,9 +1,8 @@
 package net.vix.dupechest;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.vix.dupechest.block.ModBlocks;
-import net.vix.dupechest.block.entity.ModBlockEntities;
+import net.vix.dupechest.block.entity.ModBlockEntities; // <--- CHECK THIS IMPORT
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,8 +12,11 @@ public class DupeChest implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// Initialize the Mod!
+		// 1. Register Blocks
 		ModBlocks.registerModBlocks();
+
+		// 2. Register Block Entities (THIS IS THE FIX)
+		// If this line is missing or commented out, the game crashes on placement!
 		ModBlockEntities.registerBlockEntities();
 	}
 }
