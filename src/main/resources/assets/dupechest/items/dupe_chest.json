@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "dupechest:item/dupe_chest"
+  }
+}
