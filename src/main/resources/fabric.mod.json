@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "dupechest",
+	"version": "${version}",
+	"name": "DupeChest",
+	"description": "This is a mod about DupeChest!",
+	"authors": [
+		"Vix!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/dupechest/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.vix.dupechest.DupeChest"
+		],
+		"fabric-datagen": [
+			"net.vix.dupechest.DupeChestDataGenerator"
+		],
+		"client": [
+			"net.vix.dupechest.DupeChestClient"
+		]
+	},
+	"mixins": [
+		"dupechest.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
