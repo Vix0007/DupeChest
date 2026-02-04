@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:creeper_head",
+    "minecraft:music_disc_pigstep",
+    "minecraft:conduit",
+    "minecraft:silence_armor_trim_smithing_template",
+    "minecraft:dragon_egg",
+    "minecraft:dragon_head",
+    "minecraft:piglin_head",
+    "minecraft:mace",
+    "minecraft:enchanted_golden_apple"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dupechest:dupe_chest"
+  }
+}
