@@ -20,3 +20,4 @@ All notable changes to the **DupeChest** project will be documented in this file
 ### Added
 - **Project Start**: Initialized the mod template for Minecraft 1.21.1.
 - **Block Registration**: Registered the `DUPE_CHEST_BLOCK` and basic textures.
+- **The Beginning**: A very broken mod.
