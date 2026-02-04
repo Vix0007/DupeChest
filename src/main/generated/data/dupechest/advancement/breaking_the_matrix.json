@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "has_dupe_chest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dupechest:dupe_chest"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/nether_ite_block.png",
+    "description": "Obtain a Dupe Chest and rewrite the laws of reality.",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "dupechest:dupe_chest"
+    },
+    "title": "Breaking the Matrix"
+  },
+  "requirements": [
+    [
+      "has_dupe_chest"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}
